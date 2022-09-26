@@ -10,6 +10,12 @@
         {{ data.t }}
       </option>
     </select>
+    <table class="table table-bordered">
+      <tr v-for="(data, index) in option" :key="index">
+        <td>{{ data.v }}</td>
+        <td>{{ data.t }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
