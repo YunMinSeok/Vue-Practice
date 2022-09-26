@@ -3,7 +3,8 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     {{ title }}
     <input type="text" v-model="input1" />
-    <button type="button" @click="getData" />
+    <button type="button" @click="getData">Get</button>
+    <button type="button" @click="setData">Set</button>
   </div>
 </template>
 
@@ -22,6 +23,9 @@ export default {
   methods: {
     getData() {
       alert(this.input1);
+    },
+    setData() {
+      this.input1 = "12345";
     },
   },
 };
