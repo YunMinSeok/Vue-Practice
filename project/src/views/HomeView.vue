@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     {{ title }}
     <input type="text" v-model="input1" />
+    <button type="button" @click="getData" />
   </div>
 </template>
 
@@ -17,6 +18,11 @@ export default {
       title: "이게 vue다",
       input1: "abc",
     };
+  },
+  methods: {
+    getData() {
+      alert(this.input1);
+    },
   },
 };
 </script>
