@@ -3,6 +3,7 @@
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
     <div>
+      <button @click="setTest">click</button>
       {{ this.$store.state.test }}
     </div>
   </nav>
@@ -14,7 +15,7 @@ export default {
   methods: {
     setTest() {
       //mutations SET_TEST 호출
-      this.$store.commit("SET_TEST", "test2");
+      this.$store.dispatch("TIME", "test2");
     },
   },
 };
