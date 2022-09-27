@@ -5,7 +5,11 @@ export default createStore({
     test: "test",
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    SET_TEST(state, value) {
+      state.test = value;
+    },
+  },
   actions: {},
   modules: {},
 });
