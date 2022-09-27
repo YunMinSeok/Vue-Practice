@@ -10,6 +10,13 @@ export default createStore({
       state.test = value;
     },
   },
-  actions: {},
+  actions: {
+    //비동기 호출
+    TIME({ commit }, value) {
+      return setTimeout(() => {
+        commit("SET_TEST", value);
+      }, 1000);
+    },
+  },
   modules: {},
 });
