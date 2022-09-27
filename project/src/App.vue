@@ -8,7 +8,17 @@
   </nav>
   <router-view></router-view>
 </template>
-
+<script>
+export default {
+  name: "app",
+  methods: {
+    setTest() {
+      //mutations SET_TEST 호출
+      this.$store.commit("SET_TEST", "test2");
+    },
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
