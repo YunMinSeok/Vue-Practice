@@ -1,4 +1,8 @@
 {
   "parser": "@babel/eslint-parser",
-  "parserOptions": { "requireConfigFile": "false" }
+  "parserOptions": { "requireConfigFile": "false" },
+  "babelOptions": { "configFile": "./babel.config.js" },
+  "env": {
+    "jest": true
+  }
 }
