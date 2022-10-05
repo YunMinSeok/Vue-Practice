@@ -1,15 +1,15 @@
 module.export = {
-  preset: "@vue/cli-plugin-unit-jest",
-  moduleFileExtensions: ["js", "json", "vue"],
+  moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "json"],
   transform: {
-    ".*\\.(vue)$": "vue-jest",
-    ".*\\.(js)$": "babel-jest",
+    "^.+\\.(js|jsx)?$": "babel-jest",
   },
+  testEnvironment: "node",
   moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/src/$1",
+    "^@/(.*)$": "<rootDir>/$1",
   },
-  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-  testPathIgnorePatterns: ["/node_modules/"],
-  collectCoverage: true,
-  collectCoverageFrom: ["**/*.{js,vue}", "!**/node_modules/**"],
+  testMatch: [
+    "<rootDir>/**/*.test.(js|jsx|ts|tsx)",
+    "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))",
+  ],
+  transformIgnorePatterns: ["<rootDir>/node_modules/"],
 };
