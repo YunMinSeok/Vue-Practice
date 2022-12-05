@@ -2,7 +2,7 @@
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js App" />
   <button @click="handle_toggle" type="button">모달창 띄우기</button>
-  <AlertModal v-show="is_show" :text="dd" />
+  <AlertModal v-show="is_show" :text="dd" :isShow="is_show" />
 </template>
 
 <script>
