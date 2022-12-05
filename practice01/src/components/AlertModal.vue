@@ -12,9 +12,12 @@ export default {
     text: String,
     isShow: Boolean,
   },
+  data: () => ({
+    modalOpen: this.isShow,
+  }),
   methods: {
     handle_toggle: function () {
-      this.is_show = !this.is_show; // #2, #3
+      this.modalOpen = !this.modalOpen; // #2, #3
     },
   },
 };
