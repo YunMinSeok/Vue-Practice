@@ -1,18 +1,30 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js App" />
-  <Modal :text="dd" />
+  <button @click="handle_toggle" type="button">모달창 띄우기</button>
+  <AlertModal v-show="is_show" :text="dd" />
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import Modal from "./components/Modal.vue";
+import AlertModal from "./components/AlertModal.vue";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
-    Modal,
+    AlertModal,
+  },
+  data: () => {
+    // #1
+    return {
+      is_show: false,
+    };
+  },
+  methods: {
+    handle_toggle: function () {
+      this.is_show = !this.is_show; // #2, #3
+    },
   },
 };
 </script>

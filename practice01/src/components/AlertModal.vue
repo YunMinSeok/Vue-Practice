@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Modal",
+  name: "AlertModal",
   props: {
     text: String,
   },
@@ -22,5 +22,6 @@ export default {
   margin: 0 auto;
   width: 500px;
   height: 500px;
+  background: #d9d9d9d9;
 }
 </style>
