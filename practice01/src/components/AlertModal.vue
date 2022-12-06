@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <span>{{ text }}</span>
-    <button @click="handle_toggle" type="button">모달창 닫기</button>
+    <button @click="closeModal" type="button">모달창 닫기</button>
   </div>
 </template>
 
@@ -12,12 +12,10 @@ export default {
     text: String,
     isShow: Boolean,
   },
-  data: () => ({
-    modalOpen: this.isShow,
-  }),
+  data: () => ({}),
   methods: {
-    handle_toggle: function () {
-      this.modalOpen = !this.modalOpen; // #2, #3
+    closeModal: function () {
+      this.$emit("handleModal");
     },
   },
 };

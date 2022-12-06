@@ -2,7 +2,7 @@
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js App" />
   <button @click="handle_toggle" type="button">모달창 띄우기</button>
-  <AlertModal v-show="is_show" :text="text" :isShow="is_show" />
+  <AlertModal v-show="is_show" :text="text" @handleModal="is_show = false" />
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     handle_toggle: function () {
-      this.text;
+      this.text = "변경된 값";
       this.is_show = !this.is_show; // #2, #3
     },
   },
