@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     handle_toggle: function () {
-      this.text = "변경된 값";
+      this.text = String(Math.random());
       this.is_show = !this.is_show; // #2, #3
     },
   },
