@@ -3,6 +3,7 @@
   <HelloWorld msg="Welcome to Your Vue.js App" />
   <button @click="handle_toggle" type="button">모달창 띄우기</button>
   <AlertModal v-show="is_show" :text="text" @handleModal="is_show = false" />
+  {{}}
 </template>
 
 <script>
@@ -20,6 +21,7 @@ export default {
     return {
       is_show: false,
       text: "",
+      policy: "",
     };
   },
   methods: {
