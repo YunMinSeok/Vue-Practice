@@ -5,8 +5,8 @@
       <button @click="closeModal" type="button">모달창 닫기</button>
     </div>
     <div v-show="type === 'confirm'">
-      <button @click="closeModal" type="button">확인</button>
-      <button @click="closeModal" type="button">취소</button>
+      <button @click="confirmValue(true)" type="button">확인</button>
+      <button @click="confirmValue(false)" type="button">취소</button>
     </div>
   </div>
 </template>
@@ -20,8 +20,8 @@ export default {
     closeModal: function () {
       this.$emit("handleModal");
     },
-    confirmValue: function () {
-      this.$emit("handleOkay");
+    confirmValue: function (value) {
+      this.$emit("handleOkay", value);
     },
   },
 };
