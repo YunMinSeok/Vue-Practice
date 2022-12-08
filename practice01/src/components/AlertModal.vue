@@ -10,11 +10,7 @@
 <script>
 export default {
   name: "AlertModal",
-  props: {
-    text: String,
-    isShow: Boolean,
-    type: String,
-  },
+  props: ["text", "isShow", "type"],
   data: () => ({}),
   created() {
     if (!this.type) {
