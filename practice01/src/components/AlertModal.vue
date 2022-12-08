@@ -20,6 +20,9 @@ export default {
     closeModal: function () {
       this.$emit("handleModal");
     },
+    confirmValue: function () {
+      this.$emit("handleOkay");
+    },
   },
 };
 </script>

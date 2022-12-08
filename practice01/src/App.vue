@@ -7,6 +7,7 @@
     v-show="is_show1"
     :text="text"
     @handleModal="is_show1 = false"
+    @handleOkay="is_okay = e.target.value"
     type="default"
   />
   <AlertModal
@@ -32,6 +33,7 @@ export default {
     return {
       is_show1: false,
       is_show2: false,
+      is_okay: false,
       text: "",
       policy: "",
     };
