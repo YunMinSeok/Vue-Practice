@@ -1,11 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js App" />
-  <button @click="handle_toggle" type="button">모달창 띄우기</button>
+  <button @click="handle_toggle(1)" type="button">모달창1 띄우기</button>
+  <button @click="handle_toggle(2)" type="button">모달창2 띄우기</button>
   <AlertModal
-    v-show="is_show"
+    v-show="is_show1"
     :text="text"
-    @handleModal="is_show = false"
+    @handleModal="is_show1 = false"
+    type="default"
+  />
+  <AlertModal
+    v-show="is_show2"
+    :text="text"
+    @handleModal="is_show2 = false"
     type="confirm"
   />
   <p v-html="policy" @click="click"></p>
@@ -23,15 +30,20 @@ export default {
   },
   data: () => {
     return {
-      is_show: false,
+      is_show1: false,
+      is_show2: false,
       text: "",
       policy: "",
     };
   },
   methods: {
-    handle_toggle: function () {
+    handle_toggle: function (modalNum) {
       this.text = String(Math.random());
-      this.is_show = !this.is_show;
+      if (modalNum === 1) {
+        this.is_show1 = !this.is_show1;
+      } else {
+        this.is_show2 = !this.is_show2;
+      }
     },
     click: function () {
       console.log("click");

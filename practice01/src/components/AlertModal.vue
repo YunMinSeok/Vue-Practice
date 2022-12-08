@@ -4,6 +4,10 @@
     <div v-show="type === 'default'">
       <button @click="closeModal" type="button">모달창 닫기</button>
     </div>
+    <div v-show="type === 'confirm'">
+      <button @click="closeModal" type="button">확인</button>
+      <button @click="closeModal" type="button">취소</button>
+    </div>
   </div>
 </template>
 
@@ -12,11 +16,6 @@ export default {
   name: "AlertModal",
   props: ["text", "isShow", "type"],
   data: () => ({}),
-  created() {
-    if (!this.type) {
-      this.$emit = "default";
-    }
-  },
   methods: {
     closeModal: function () {
       this.$emit("handleModal");
