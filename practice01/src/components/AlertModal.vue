@@ -11,6 +11,7 @@ export default {
   props: {
     text: String,
     isShow: Boolean,
+    type: String,
   },
   data: () => ({}),
   methods: {

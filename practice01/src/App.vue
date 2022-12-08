@@ -2,7 +2,12 @@
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js App" />
   <button @click="handle_toggle" type="button">모달창 띄우기</button>
-  <AlertModal v-show="is_show" :text="text" @handleModal="is_show = false" />
+  <AlertModal
+    v-show="is_show"
+    :text="text"
+    @handleModal="is_show = false"
+    type="confirm"
+  />
   <p v-html="policy" @click="click"></p>
 </template>
 
@@ -17,7 +22,6 @@ export default {
     AlertModal,
   },
   data: () => {
-    // #1
     return {
       is_show: false,
       text: "",
@@ -27,7 +31,7 @@ export default {
   methods: {
     handle_toggle: function () {
       this.text = String(Math.random());
-      this.is_show = !this.is_show; // #2, #3
+      this.is_show = !this.is_show;
     },
     click: function () {
       console.log("click");
