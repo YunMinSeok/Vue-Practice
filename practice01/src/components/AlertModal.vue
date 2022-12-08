@@ -1,7 +1,9 @@
 <template>
   <div class="wrap">
     <span>{{ text }}</span>
-    <button @click="closeModal" type="button">모달창 닫기</button>
+    <div v-show="type === 'default'">
+      <button @click="closeModal" type="button">모달창 닫기</button>
+    </div>
   </div>
 </template>
 
@@ -14,6 +16,11 @@ export default {
     type: String,
   },
   data: () => ({}),
+  created() {
+    if (!this.type) {
+      this.$emit = "default";
+    }
+  },
   methods: {
     closeModal: function () {
       this.$emit("handleModal");
