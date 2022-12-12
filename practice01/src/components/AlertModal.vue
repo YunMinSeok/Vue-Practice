@@ -21,7 +21,7 @@ export default {
       this.$emit("handleModal");
     },
     confirmValue: function (value) {
-      this.$emit("handleOkay", value);
+      this.$emit("handleModal", value);
     },
   },
 };

@@ -7,13 +7,12 @@
     v-show="is_show1"
     :text="text"
     @handleModal="is_show1 = false"
-    @handleOkay="handleConfirmModal"
     type="default"
   />
   <AlertModal
     v-show="is_show2"
     :text="text"
-    @handleModal="is_show2 = false"
+    @handleModal="handleConfirmModal"
     type="confirm"
   />
   <p v-html="policy" @click="click"></p>
@@ -49,6 +48,7 @@ export default {
     },
     handleConfirmModal: function (isTrue) {
       console.log(isTrue);
+      this.is_show2 = false;
     },
     click: function () {
       console.log("click");
