@@ -7,7 +7,7 @@
     v-show="is_show1"
     :text="text"
     @handleModal="is_show1 = false"
-    @handleOkay="is_okay = e.target.value"
+    @handleOkay="handleConfirmModal"
     type="default"
   />
   <AlertModal
@@ -46,6 +46,9 @@ export default {
       } else {
         this.is_show2 = !this.is_show2;
       }
+    },
+    handleConfirmModal: function (isTrue) {
+      console.log(isTrue);
     },
     click: function () {
       console.log("click");
